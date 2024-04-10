@@ -34,13 +34,13 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Registro datos del
-                                            profesor</h1>
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Registro asignaturas y cursos del
+                                            estudiante</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="{{route("crud.create_Profesor")}}" method="post">
+                                        <form action="{{route("crud.create_Asignacion_Estudiante")}}" method="post">
                                             @csrf
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Id</label>
@@ -48,29 +48,24 @@
                                                     aria-describedby="emailHelp" name="txtcodigo">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    aria-describedby="emailHelp" name="txtnombre">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Rol</label>
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    aria-describedby="emailHelp" name="txtrol">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Usuario</label>
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    aria-describedby="emailHelp" name="txtusuario">
-                                            </div>
-                                            <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Identificacion</label>
                                                 <input type="text" class="form-control" id="exampleInputEmail1"
                                                     aria-describedby="emailHelp" name="txtidentificacion">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Email</label>
+                                                <label for="exampleInputEmail1" class="form-label">Nombre</label>
                                                 <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    aria-describedby="emailHelp" name="txtemail">
+                                                    aria-describedby="emailHelp" name="txtnombre">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Asignacion cursos</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    aria-describedby="emailHelp" name="txtasigcur">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Asignar grupos</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    aria-describedby="emailHelp" name="txtasiggrup">
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
@@ -94,16 +89,15 @@
             </ul>
         </div>
     @endif
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalregistrar">Añadir profesor</button>
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalregistrar">Añadir asignacion estudiante</button>
         <table class="table table-striped table-bordered table-hover">
             <thead class="bg-primary text-white">
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Rol</th>
-                    <th scope="col">Usuario</th>
                     <th scope="col">Identificacion</th>
-                    <th scope="col">Email</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Asignacion cursos</th>
+                    <th scope="col">Asignar grupos</th>
                     <th></th>
                 </tr>
             </thead>
@@ -111,15 +105,14 @@
                 @foreach ($datos as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
-                        <td>{{ $item->nombre }}</td>
-                        <td>{{ $item->rol }}</td>
-                        <td>{{ $item->usuario }}</td>
                         <td>{{ $item->identificacion }}</td>
-                        <td>{{ $item->email }}</td>
+                        <td>{{ $item->nombre }}</td>
+                        <td>{{ $item->asigcurso }}</td>
+                        <td>{{ $item->asiggrupo }}</td>
                         <td>
                             <a href="" data-bs-toggle="modal" data-bs-target="#modalEditar{{ $item->id }}" 
                                 class="btn btn-warning btn-sm"><i class="fa-solid fa-user-pen"></i></a>
-                            <a href="{{route("crud.delete_Profesor",$item->id)}}" onclick="return res()" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                            <a href="{{route("crud.delete_Asignacion_Estudiante",$item->id)}}" onclick="return res()" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
                         </td>
 
                         <!-- Modal modificar datos-->
@@ -129,12 +122,12 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar datos del
-                                            profesor</h1>
+                                            estudiante</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="{{route("crud.update_Profesor")}}" method="post">
+                                        <form action="{{route("crud.update_Asignacion_Estudiante")}}" method="post">
                                             @csrf
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Id</label>
@@ -142,29 +135,24 @@
                                                     aria-describedby="emailHelp" name="txtcodigo" value="{{ $item->id }}" readonly>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    aria-describedby="emailHelp" name="txtnombre" value="{{ $item->nombre }}">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Rol</label>
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    aria-describedby="emailHelp" name="txtrol" value="{{ $item->rol }}">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Usuario</label>
-                                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    aria-describedby="emailHelp" name="txtusuario" value="{{ $item->usuario }}">
-                                            </div>
-                                            <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">Identificacion</label>
                                                 <input type="text" class="form-control" id="exampleInputEmail1"
                                                     aria-describedby="emailHelp" name="txtidentificacion" value="{{ $item->identificacion }}">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="exampleInputEmail1" class="form-label">Email</label>
+                                                <label for="exampleInputEmail1" class="form-label">Nombre</label>
                                                 <input type="text" class="form-control" id="exampleInputEmail1"
-                                                    aria-describedby="emailHelp" name="txtemail" value="{{ $item->email }}">
+                                                    aria-describedby="emailHelp" name="txtnombre" value="{{ $item->nombre }}">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Asignacion cursos</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    aria-describedby="emailHelp" name="txtasigcur" value="{{ $item->asigcurso }}">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Asignar grupos</label>
+                                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                                    aria-describedby="emailHelp" name="txtasiggrup" value="{{ $item->asiggrupo }}">
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
