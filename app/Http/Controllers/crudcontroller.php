@@ -17,9 +17,9 @@ class crudcontroller extends Controller
         $this->middleware('auth');
     }
 
-    public function index_Principal(){
+    public function index(){
         $datos=DB::select("select * from registros");
-        return view("welcome")->with("datos", $datos);
+        return view("welcome5")->with("datos", $datos);
     }
 
     public function index_Registrar_Profesor(){

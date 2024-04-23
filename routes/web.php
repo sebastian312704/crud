@@ -4,8 +4,7 @@ use App\Http\Controllers\crudcontroller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-
-Route::get("/", [crudcontroller::class,"index_Principal"])->name("crud.index_Principal");
+Route::get("/", [crudcontroller::class,"index"]);
 Route::get("/añadir-profe", [crudcontroller::class,"index_Registrar_Profesor"])->name("crud.index_Registrar_Profesor");
 Route::get("/añadir-asignacion-profe", [crudcontroller::class,"index_Asignacion_Profesor"])->name("crud.index_Asignacion_Profesor");
 Route::get("/añadir-asignacion-est", [crudcontroller::class,"index_Asignacion_Estudiante"])->name("crud.index_Asignacion_Estudiante");
