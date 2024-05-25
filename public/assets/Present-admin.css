@@ -1,0 +1,61 @@
+body{
+    font-family: "Poppins", sans-serif;
+    margin: 20px; /* Define el margen blanco alrededor de toda la página */
+    background-color: #fff; /* Color de fondo blanco para el margen */
+    border-radius: 100px; /* Redondea las esquinas */
+}
+
+header{
+    width: 100%;
+    height: 600px;
+    background: #b92b27;  /* fallback for old browsers */
+    background: linear-gradient(to right, #5DADE2, #BDC3C7, #2C3E50), url(); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    border-radius: 20px; /* Redondea las esquinas */
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.textos-header{
+    display: flex;
+    height: 600px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.textos-header h1{
+    font-size: 50px;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.textos-header h2{
+    font-size: 25px;
+    font-weight: 500;
+    color: black;
+    margin-top: 0;
+}
+
+.header-image {
+    width: 120px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-left: 20px; /* Ajusta este valor según el espacio que desees entre el título y la imagen */
+    margin-top: -50px; /* Ajusta este valor para mover la imagen más arriba */
+    border-radius: 50%; /* Hace que el borde sea circular */
+    border: 2px solid black; /* Borde blanco */
+}
+

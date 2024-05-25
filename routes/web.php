@@ -1,13 +1,20 @@
 <?php
 
+use App\Http\Controllers\Admincontroller;
 use App\Http\Controllers\crudcontroller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-Route::get("/", [crudcontroller::class,"index"]);
+// ruta para las vistas
+Route::get("/index", [Admincontroller::class,"index"])->name("index");
+Route::get("/index2", [crudcontroller::class,"index2"])->name("index2");
+Route::get("/index3", [crudcontroller::class,"index3"])->name("index3");
+
+Route::get("/añadir-Est", [crudcontroller::class,"index_Registrar_Estudiante"])->name("crud.index_Registrar_Estudiante");
 Route::get("/añadir-profe", [crudcontroller::class,"index_Registrar_Profesor"])->name("crud.index_Registrar_Profesor");
 Route::get("/añadir-asignacion-profe", [crudcontroller::class,"index_Asignacion_Profesor"])->name("crud.index_Asignacion_Profesor");
 Route::get("/añadir-asignacion-est", [crudcontroller::class,"index_Asignacion_Estudiante"])->name("crud.index_Asignacion_Estudiante");
+Route::get("/añadir-notas", [crudcontroller::class,"index_notas"])->name("index_notas");
 
 //ruta para añadir un estudiante
 Route::post("/registrar-estudiante", [crudcontroller::class,"create_Estudiante"])->name("crud.create_Estudiante");
@@ -20,6 +27,9 @@ Route::post("/registrar-asigancion-profesor", [crudcontroller::class,"create_Asi
 
 //ruta para añadir una asigancion al estudiante
 Route::post("/registrar-asigancion-estudiante", [crudcontroller::class,"create_Asignacion_Profesor"])->name("crud.create_Asignacion_Profesor");
+
+//ruta para añadir nota
+Route::post("/añadir-nota", [crudcontroller::class,"añadir_nota"])->name("añad_nota");
 
 
 //ruta para modificar estudiante
@@ -47,6 +57,10 @@ Route::get("/eliminar-asignacion-profesor-{id}", [crudcontroller::class,"delete_
 
 //ruta para eliminar asignacion estudiante
 Route::get("/eliminar-asignacion-estudiante-{id}", [crudcontroller::class,"delete_Asignacion_Estudiante"])->name("crud.delete_Asignacion_Estudiante");
+
+
+//añadir notas
+Route::post("/registrar-notas", [crudcontroller::class,"añad_nota"])->name("crud.añad_nota");
 
 Auth::routes();
 
