@@ -94,7 +94,7 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ route('index') }}" class="menu-link">
+                                <a href="{{ route('Pagina_Est') }}" class="menu-link">
                                     <div data-i18n="Account">Pagina principal</div>
                                 </a>
                             </li>
@@ -203,12 +203,20 @@
                         <table class="table table-striped table-bordered table-hover">
                             <thead class="bg-primary text-white">
                                 <tr>
-                                    <th scope="col">Id</th>
                                     <th scope="col">Nombre Asignatura</th>
                                     <th scope="col">Nombre Nota</th>
                                     <th scope="col">Calificación</th>
                                 </tr>
                             </thead>
+                            <tbody class="table-group-divider">
+                                @foreach ($datos as $item)
+                                    <tr>
+                                        <td>{{ $item->nameAsignatura }}</td>
+                                        <td>{{ $item->nameNota }}</td>
+                                        <td>{{ $item->nmCalificacion }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
                         </table>
                         
                     </body>               

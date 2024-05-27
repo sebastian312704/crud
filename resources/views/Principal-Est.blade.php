@@ -90,11 +90,23 @@
 
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                            <div data-i18n="Account Settings">Home</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="{{ route('Pagina_Admin') }}" class="menu-link">
+                                    <div data-i18n="Account">Pagina Principal</div>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-dock-top"></i>
                             <div data-i18n="Account Settings">Visualizar notas</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ route('index2') }}" class="menu-link">
+                                <a href="{{ route('index_Est') }}" class="menu-link">
                                     <div data-i18n="Account">Planilla notas</div>
                                 </a>
                             </li>

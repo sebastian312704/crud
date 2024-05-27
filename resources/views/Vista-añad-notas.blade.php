@@ -67,7 +67,7 @@
                             style="text-transform: uppercase; font-size: 1em;">
                             <img src="../assets/img/avatars/icon.png" alt="Icono de Administrador"
                                 style="vertical-align: middle; margin-right: 5px; width: 50px; height: auto;">
-                            Administrador
+                            Profesor
                         </span>
                     </a>
 
@@ -93,40 +93,23 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ route('crud.index_Registrar_Profesor') }}" class="menu-link">
-                                    <div data-i18n="Account">Registrar Profesor</div>
+                                <a href="{{ route('index4') }}" class="menu-link">
+                                    <div data-i18n="Account">Registrar Nota</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="{{ route('crud.index_Registrar_Estudiante') }}" class="menu-link">
-                                    <div data-i18n="Notifications">Registar Estudiante</div>
-                                </a>
-                            </li>
-
                         </ul>
                     </li>
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                            <div data-i18n="Authentications">Asignaciones</div>
+                            <div data-i18n="Authentications">Visualizar notas</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ route('crud.index_Asignacion_Profesor') }}" class="menu-link">
-                                    <div data-i18n="Basic">Asignar Profesor</div>
+                                <a href="{{ route('index_Prof') }}" class="menu-link">
+                                    <div data-i18n="Basic">Planilla notas</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="{{ route('crud.index_Asignacion_Estudiante') }}" class="menu-link">
-                                    <div data-i18n="Basic">Asignar Estudiante</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="{{ route('index_notas') }}" class="menu-link">
-                                    <div data-i18n="Basic">Asignar Notas</div>
-                                </a>
-                            </li>
-
                         </ul>
             </aside>
             <!-- / Menu -->

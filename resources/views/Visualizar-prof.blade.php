@@ -86,7 +86,6 @@
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text">Opciones</span>
                     </li>
-
                     <li class="menu-item">
 
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -95,36 +94,10 @@
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ route('Pagina_Admin') }}" class="menu-link">
-                                    <div data-i18n="Account">Pagina Principal</div>
+                                <a href="{{ route('Pagina_Prof') }}" class="menu-link">
+                                    <div data-i18n="Account">Pagina principal</div>
                                 </a>
                             </li>
-                        </ul>
-                        
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                            <div data-i18n="Account Settings">Registros</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ route('index4') }}" class="menu-link">
-                                    <div data-i18n="Account">Registrar Nota</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                            <div data-i18n="Authentications">Visualizar notas</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="{{ route('index_Prof') }}" class="menu-link">
-                                    <div data-i18n="Basic">Planilla notas</div>
-                                </a>
-                            </li>
-                        </ul>
             </aside>
             <!-- / Menu -->
 
@@ -207,38 +180,46 @@
 
                 <div>
 
-                    <!DOCTYPE html>
-                    <html lang="en">
                     <head>
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-                        <title>Document</title>
-                        <link rel="stylesheet" href="{{asset('assets/Present-admin.css')}}">
+                        <title>My Academic Planner</title>
+                        <script src="https://kit.fontawesome.com/38beaf997f.js" crossorigin="anonymous"></script>
+                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+                            rel="stylesheet"
+                            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+                            crossorigin="anonymous">
                     </head>
+
                     <body>
-                    
-                    <header>
-                    
-                    <section class="textos-header">
-                    
-                        <div class="header-content">
-                            <h1>My Academic Planner</h1>
-                            <img src="../assets/img/avatars/icon.png" alt="Image" class="header-image">
+
+                        <div style="display: flex; align-items: center; justify-content: center; padding: 20px;">
+                            <h1 class="text-center p-3">My Academic Planner</h1>
+                            <img src="../assets/img/avatars/icon.png" alt="Imagen"
+                                style="width: 100px; height: auto; border-radius: 50%; border: 2px solid black;">
                         </div>
-                        <h2>Bienvenido al apartado de Profesor, aquí podrás
-                            añadir las notas y visualizarlas
-                        </h2>
-                    
-                    </section>
-                    
-                    <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-0.00,49.85 C150.00,149.60 349.20,-49.85 500.00,49.85 L500.00,149.60 L-0.00,149.60 Z" style="stroke: none; fill: #fff;"></path></svg></div>
-                    
-                    </header>
-                    
-                    </body>
-                    </html>
+
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead class="bg-primary text-white">
+                                <tr>
+                                    <th scope="col">Nombre Asignatura</th>
+                                    <th scope="col">Nombre Nota</th>
+                                    <th scope="col">Calificación</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                                @foreach ($datos as $item)
+                                    <tr>
+                                        <td>{{ $item->nameAsignatura }}</td>
+                                        <td>{{ $item->nameNota }}</td>
+                                        <td>{{ $item->nmCalificacion }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                         
+                    </body>               
 
 
                 </div>

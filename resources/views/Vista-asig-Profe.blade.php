@@ -95,7 +95,7 @@
 
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ route('index') }}" class="menu-link">
+                                <a href="{{ route('Pagina_Admin') }}" class="menu-link">
                                     <div data-i18n="Account">Pagina principal</div>
                                 </a>
                             </li>
@@ -135,12 +135,6 @@
                                     <div data-i18n="Basic">Asignar Estudiante</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="{{ route('index_notas') }}" class="menu-link">
-                                    <div data-i18n="Basic">Asignar Notas</div>
-                                </a>
-                            </li>
-
                         </ul>
             </aside>
             <!-- / Menu -->

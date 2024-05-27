@@ -17,14 +17,49 @@ class crudcontroller extends Controller
     {
         $this->middleware('auth');
     }
-    
-    public function index_notas()
+
+    public function Pagina_Admin()
+    {
+        return view ('Principal-Admin');
+    }
+
+    public function Pagina_Prof()
+    {
+        return view ('Principal-Prof');
+    }
+
+    public function Pagina_Est()
+    {
+        return view ('Principal-Est');
+    }
+
+    public function index4()
+    {
+        return view ('Vista-añad-notas');
+    }
+
+    public function index_Prof()
     {
         // Recuperar todos los datos de la tabla asig_notas
-        $datos = DB::table('asig_notas')->get();
+        $datos = DB::table('asig_notas')
+                    ->select('nameAsignatura', 'nameNota', 'nmCalificacion')
+                    ->get();
 
-        // Pasar los datos a la vista
+        // Pasar los datos a la vista y retornar la vista
+        return view("Visualizar-prof")->with("datos", $datos);
+
+    }
+
+    public function index_Est()
+    {
+        // Recuperar todos los datos de la tabla asig_notas
+        $datos = DB::table('asig_notas')
+                    ->select('nameAsignatura', 'nameNota', 'nmCalificacion')
+                    ->get();
+
+        // Pasar los datos a la vista y retornar la vista
         return view("Visualizar")->with("datos", $datos);
+
     }
     
     public function index_Registrar_Estudiante()

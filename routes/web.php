@@ -2,19 +2,25 @@
 
 use App\Http\Controllers\Admincontroller;
 use App\Http\Controllers\crudcontroller;
+use App\Http\Controllers\Estcontroller;
+use App\Http\Controllers\Profcontroller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 // ruta para las vistas
-Route::get("/index", [Admincontroller::class,"index"])->name("index");
-Route::get("/index2", [crudcontroller::class,"index2"])->name("index2");
-Route::get("/index3", [crudcontroller::class,"index3"])->name("index3");
+Route::get("/index", [crudcontroller::class,"Pagina_Admin"])->name("Pagina_Admin");
+Route::get("/Pagina/Profe", [crudcontroller::class,"Pagina_Prof"])->name("Pagina_Prof");
+Route::get("/Pagina/Est", [crudcontroller::class,"Pagina_Est"])->name("Pagina_Est");
+Route::get("/index4", [crudcontroller::class,"index4"])->name("index4");
+Route::get("/visualizar/prof", [crudcontroller::class, "index_Prof"])->name("index_Prof");
+Route::get("/visualizar/est", [crudcontroller::class, "index_Est"])->name("index_Est");
+
 
 Route::get("/añadir-Est", [crudcontroller::class,"index_Registrar_Estudiante"])->name("crud.index_Registrar_Estudiante");
 Route::get("/añadir-profe", [crudcontroller::class,"index_Registrar_Profesor"])->name("crud.index_Registrar_Profesor");
 Route::get("/añadir-asignacion-profe", [crudcontroller::class,"index_Asignacion_Profesor"])->name("crud.index_Asignacion_Profesor");
 Route::get("/añadir-asignacion-est", [crudcontroller::class,"index_Asignacion_Estudiante"])->name("crud.index_Asignacion_Estudiante");
-Route::get("/añadir-notas", [crudcontroller::class,"index_notas"])->name("index_notas");
+
 
 //ruta para añadir un estudiante
 Route::post("/registrar-estudiante", [crudcontroller::class,"create_Estudiante"])->name("crud.create_Estudiante");

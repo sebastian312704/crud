@@ -95,7 +95,7 @@
 
                         <ul class="menu-sub">
                             <li class="menu-item">
-                                <a href="{{ route('index') }}" class="menu-link">
+                                <a href="{{ route('Pagina_Admin') }}" class="menu-link">
                                     <div data-i18n="Account">Pagina principal</div>
                                 </a>
                             </li>

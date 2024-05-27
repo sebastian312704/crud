@@ -122,13 +122,43 @@
                                     <div data-i18n="Basic">Asignar Estudiante</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a href="{{ route('index_notas') }}" class="menu-link">
-                                    <div data-i18n="Basic">Asignar Notas</div>
-                                </a>
-                            </li>
-
                         </ul>
+
+                        <li class="menu-header small text-uppercase">
+                            <span class="menu-header-text">Vista profesor</span>
+                        </li>
+                        <li class="menu-item">
+    
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                                <div data-i18n="Account Settings">Principal profesor</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="{{ route('Pagina_Prof') }}" class="menu-link">
+                                        <div data-i18n="Account">Principal</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-header small text-uppercase">
+                            <span class="menu-header-text">Vista estudiante</span>
+                        </li>
+                        <li class="menu-item">
+    
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                                <div data-i18n="Account Settings">Principal estudiante</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                    <a href="{{ route('Pagina_Est') }}" class="menu-link">
+                                        <div data-i18n="Account">Principal</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
             </aside>
             <!-- / Menu -->
 
